@@ -1,0 +1,50 @@
+Question:
+
+Input:
+
+this is a test text
+test
+
+Output
+10
+
+#include<stdio.h>
+#include<string.h>
+int search(char a[], char b[]){
+    //printf("%s\n%s\n",a,b);
+    int i,j,k,flag=0;
+	int l1 = strlen(a);
+	int l2 = strlen(b);
+	for(i=0;i<l1;i++){
+		if(a[i]==b[0]){
+			k=i;
+			flag=0;
+			for(j=0;j<l2;j++,k++){
+			    if(j==0){
+			        if(!(a[i-1]==' '||i==0))
+			            break;
+			    }
+				if(a[k]==b[j]){
+					flag++;
+				}
+				else{
+				    flag=0;
+				    break;
+				}
+			}
+			if(flag==l2&&(a[k]==' '||k==l1)){
+				return i;
+			}
+		}
+	}
+	return -1;
+}
+int main(){
+	char a[1000],b[100];
+	scanf("%[^\n]s",a);
+	scanf("%s",b);
+	//printf("%s\n%s\n",a,b);
+	printf("%d",search(a,b));
+	return 0;
+}
+
