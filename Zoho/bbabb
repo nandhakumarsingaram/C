@@ -1,0 +1,60 @@
+Question:
+
+Input:
+
+6
+
+Output:
+
+      f
+     fef
+    fedef
+   fedcdef
+  fedcbcdef
+ fedcbabcdef
+  fedcbcdef
+   fedcdef
+    fedef
+     fef
+      f
+      
+Solution:
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World!\n");
+    
+    int n;
+    scanf("%d",&n);
+    int i,j,k,s,t;
+    
+    for(i=0;i<n;i++){
+	for(j=0;j<n-i;j++){
+	    printf(" ");
+	}
+        for(j=0;j<=i;j++){
+            printf("%c",96+(n-j));
+        }
+	for(j=i-1;j>=0;j--){
+	    printf("%c",96+(n-j));
+	}
+        printf("\n");
+    }
+    
+    for(i=n-2;i>=0;i--){
+	for(j=0;j<n-i;j++){
+	    printf(" ");
+	}
+        for(j=0;j<=i;j++){
+            printf("%c",96+(n-j));
+        }
+	for(j=i-1;j>=0;j--){
+	    printf("%c",96+(n-j));
+	}
+        printf("\n");
+    }
+
+    return 0;
+}
