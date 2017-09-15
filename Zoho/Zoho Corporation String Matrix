@@ -1,0 +1,99 @@
+//nandhu
+
+Question:
+
+5
+5
+z t a r o
+t o i n p
+a i h o r
+r n o o o
+o p r o c
+4
+n g o y
+g a i u
+o i n h
+y a h d
+3
+h r e
+d a k
+e k c
+2
+h i
+i i
+1
+i i
+
+Output:
+
+zohocorporation zohocorporation
+YES
+nandhuyogi nandhayogi
+NO
+hacker hacked
+NO
+hii hii
+YES
+i i
+YES
+
+Solution:
+
+#include <stdio.h>
+
+int main()
+{
+    //printf("Hello World!\n");
+    int testcase;
+    scanf("%d",&testcase);
+    while(testcase--){
+        int n,i,j,k=0,t=0;
+        scanf("%d",&n);
+        char a[n][n],b[100],c[100];
+        memset(b,'\0',100);
+        memset(c,'\0',100);
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                scanf(" %c",&a[i][j]);
+            }
+        }
+        
+        /*for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                printf("%c",a[i][j]);
+            }
+            printf("\n");
+        }*/
+    
+        for(i=0;i<n;i++){
+            t=i;
+            for(j=i*2;j<n-i;j++){
+                if((t+i)==j){
+                    b[k]=a[j][t];
+                    c[k++]=a[t][j];
+                    t++;
+                }
+            }
+            for(j=n-(i*2)-2;j>=i;j--){
+                b[k]=a[j][n-1-i];
+                c[k++]=a[n-1-i][j];
+            }
+            for(j=n-(i*2)-2;j>i;j--){
+                b[k]=a[i][j];
+                c[k++]=a[j][i];
+            }
+        }
+        printf("%s %s\n",b,c);
+        for(i=0;b[i];i++){
+            if(b[i]!=c[i]){
+                printf("NO\n");
+                break;
+            }
+        }
+        if(i==strlen(b)){
+            printf("YES\n");
+        }
+    }
+    
+    return 0;
+}
