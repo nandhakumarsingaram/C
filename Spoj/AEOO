@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int i,j,nsq,count=0;
+    scanf("%d",&nsq);
+    for(i=1;i<=sqrt(nsq);i++){
+         for(j=i+1;i*j<=nsq;j++){
+             count++;
+         }
+    }
+    count+=sqrt(nsq);
+    printf("%d",count);
+    return 0;
+}
