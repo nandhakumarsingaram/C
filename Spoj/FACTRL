@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    //printf("Hello World!\n");
+    int t;
+    scanf("%d",&t);
+    while(t--){
+        long long int n,count=0;
+        scanf("%lld",&n);
+        while(n>=5){
+            count += n/5;
+            n /= 5;
+        }
+        printf("%lld\n",count);
+    }
+    return 0;
+}
