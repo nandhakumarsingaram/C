@@ -1,0 +1,46 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+
+class Main {
+    public static void main(String args[] ) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String l = br.readLine();
+        int t = Integer.parseInt(l);
+        while(t>0){
+            String line = br.readLine();
+            String s[] = line.split(" ");
+            
+            StringBuilder i1 = new StringBuilder();
+            i1.append(s[0]);
+            i1 = i1.reverse();
+            StringBuilder i2 = new StringBuilder();
+            i2.append(s[1]);
+            i2 = i2.reverse();
+            
+            String s1 = new String(i1);
+            String s2 = new String(i2);
+            
+            long n1 = Long.parseLong(s1);
+            long n2 = Long.parseLong(s2);
+            
+            String s3 = Long.toString(n1+n2);
+            
+            StringBuilder i3 = new StringBuilder();
+            i3.append(s3);
+            i3 = i3.reverse();
+            
+            String s4 = new String(i3);
+            long n3 = Long.parseLong(s4);
+            
+            t--;
+            System.out.println(n3);
+        }
+        
+        
+
+        //System.out.println("Hello World!");
+    }
+}
